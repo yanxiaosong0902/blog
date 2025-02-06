@@ -18,7 +18,11 @@ export default function MenuComp() {
     }]
   }, {
     key: 'typescript',
-    label: 'typescript'
+    label: 'typescript',
+    children: [{
+      key: 'ts-types',
+      label: '常用类型工具'
+    }]
   }, {
     key: 'react',
     label: 'react'
@@ -39,7 +43,6 @@ export default function MenuComp() {
 
   function handleMenuChange(info: MenuInfo) {
     const path = info.keyPath.reverse().join('/')
-    console.log(path)
     router.push(`/${path}`)
   }
   return (
