@@ -1,9 +1,9 @@
-import Image from "next/image";
-import './page.less'
+import styles from './page.module.css'
 
 export default function Home() {
+  console.log('123')
   return (
-    <div className="main-wrapper">
+    <div className={styles.mainWrapper}>
       this is my home page
     </div>
   )

@@ -1,0 +1,23 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  padding: 0 10px;
+  background-color: #fff;
+  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0);
+  z-index: 1000;
+}
+
+.headerBox {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}

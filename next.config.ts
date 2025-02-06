@@ -1,18 +1,28 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
+// import RemarkHTML from 'remark-html'
 
 const nextConfig: NextConfig = {
   /* config options here */
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     config.module.rules.push({
-      test: /\.less$/,
+      test: /\.md$/,
       use: [
-        'style-loader',
-        'css-loader',
-        'less-loader'
-      ]
-    });
-    return config;
+        // {
+        //   loader: 'html-loader',
+        // },
+        // {
+        //   loader: 'remark-loader',
+        //   options: {
+        //     remarkOptions: {
+        //       plugins: [RemarkHTML],
+        //     },
+        //   },
+        // },
+        'raw-loader'
+      ],
+    },)
+    return config
   }
-};
+}
 
-export default nextConfig;
+export default nextConfig
