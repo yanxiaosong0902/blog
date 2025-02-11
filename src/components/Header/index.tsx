@@ -7,6 +7,7 @@ import { Drawer } from 'antd'
 import MenuComp from '../Menu'
 import { usePathname } from 'next/navigation'
 import { MenuItems } from '@/common/menus'
+import Link from 'next/link'
 
 function getRouteTitle(pathname: string, menu: any[]) {
   const paths = pathname.split('/').filter(item => item)
@@ -23,7 +24,7 @@ function getRouteTitle(pathname: string, menu: any[]) {
       }
     }
   }
-  return currentMenu.label
+  return currentMenu?.label
 }
 
 export default function Header() {
@@ -38,7 +39,9 @@ export default function Header() {
       <div className={styles.headerBox}>
         <div className={styles.left}>
           {/* <h2>By</h2> */}
-          <Image src="/next.svg" alt="icon" width="60" height="60" />
+          <Link href="/">
+            <Image src="/next.svg" alt="icon" width="60" height="60" />
+          </Link>
         </div>
         <div className={styles.centerPathName}>{currentpath}</div>
         <div className={styles.rightMenuIcon}>

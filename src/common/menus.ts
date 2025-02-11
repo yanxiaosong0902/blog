@@ -1,4 +1,11 @@
-export const MenuItems = [{
+
+export type MenuItem = {
+  key: string
+  label: string
+  children?: MenuItem[]
+}
+
+export const MenuItems: MenuItem[] = [{
   key: 'doc-js',
   label: 'javascript',
   children: [{

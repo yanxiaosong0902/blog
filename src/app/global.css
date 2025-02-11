@@ -1,5 +1,9 @@
 :root {
   --header-height: 50px;
+  --primary-color: #00aae7;
+  --success-color: #4bc310;
+  --warning-color: #fa8c16;
+  --danger-color: #e55c5c;
 }
 
 * {
@@ -32,6 +36,15 @@ body {
   color: #fff;
   padding: var(--header-height) 20px 20px;
 }
+
+a {
+  color: var(--primary-color);
+}
+
+.contentWrapper.common {
+  opacity: 1;
+}
+
 .visible {
   opacity: 1;
 }

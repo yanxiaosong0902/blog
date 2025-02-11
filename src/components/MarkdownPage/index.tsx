@@ -3,7 +3,7 @@ import useHighlightCode from '@/hooks/highlightCode'
 import { Skeleton } from 'antd'
 import { useLayoutEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-export default function MarkdownPage(props: React.PropsWithChildren<{ file: string }>) {
+export default function MarkdownPage(props: React.PropsWithChildren<{ file?: string }>) {
   const isCompelete = useHighlightCode()
   const [isLoading, setIsLoading] = useState(true)
   useLayoutEffect(() => {
