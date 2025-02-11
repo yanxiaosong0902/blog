@@ -13,7 +13,8 @@ const compat = new FlatCompat({
 //   ...compat.extends("next/core-web-vitals", "next/typescript"),
 // ];
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next'),
+  ...compat.extends('next/core-web-vitals', 'next', 'plugin:@typescript-eslint/recommended'),
+  ...compat.plugins('react', 'react-hooks', '@typescript-eslint'),
   // {
   //   rules: {
   //     "react/react-in-jsx-scope": "off",
@@ -48,7 +49,9 @@ const eslintConfig = [
       'space-before-blocks': 'error',
       'no-explicit-any': 'off',
       'semi': ['error', 'never'],
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
       'react-hooks/exhaustive-deps': 'warn',
       // 'react/jsx-indent': ['error', 'always'],
       'react/jsx-indent': ['error', 2, {

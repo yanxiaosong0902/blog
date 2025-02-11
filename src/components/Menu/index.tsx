@@ -3,51 +3,35 @@ import { Menu } from 'antd'
 import type { MenuInfo } from 'rc-menu/lib/interface'
 import styles from './index.module.css'
 import { useRouter } from 'next/navigation'
+import { MenuItems } from '@/common/menus'
+import { useLayoutEffect, useRef } from 'react'
 
-export default function MenuComp() {
+type Props = {
+  show?: boolean
+  callback?: (current: string) => void
+}
+
+export default function MenuComp(props: Props) {
+  const { show, callback } = props
   const router = useRouter()
-  const items = [{
-    key: 'javascript',
-    label: 'javascript',
-    children: [{
-      key: 'promise',
-      label: 'promise'
-    }, {
-      key: 'gc',
-      label: '垃圾回收'
-    }]
-  }, {
-    key: 'typescript',
-    label: 'typescript',
-    children: [{
-      key: 'ts-types',
-      label: '常用类型工具'
-    }]
-  }, {
-    key: 'react',
-    label: 'react'
-  }, {
-    key: 'vue',
-    label: 'vue'
-  }, {
-    key: 'node',
-    label: 'node'
-  }, {
-    key: 'css',
-    label: 'css',
-    children: [{
-      key: 'optimize',
-      label: '优化'
-    }]
-  }]
+  const wrapper = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    if (show) {
+      wrapper.current?.style.setProperty('display', 'block')
+    }
+  }, [show])
 
   function handleMenuChange(info: MenuInfo) {
     const path = info.keyPath.reverse().join('/')
     router.push(`/${path}`)
+    if (callback) {
+      callback(info.key)
+    }
   }
   return (
-    <div className={styles.menuWrapper}>
-      <Menu items={items} mode="inline" className={styles.antdMenu} onClick={handleMenuChange} />
+    <div className={styles.menuWrapper} ref={wrapper}>
+      <Menu items={MenuItems} mode="inline" className={styles.antdMenu} theme='dark' onClick={handleMenuChange} />
     </div>
   )
 }

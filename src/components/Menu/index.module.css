@@ -1,9 +1,18 @@
 .menuWrapper {
-  height: 100vh;
+  height: 100%;
   width: 200px;
-  padding-top: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .menuWrapper {
+    display: none;
+  }
+  
 }
 
 .antdMenu {
-  height: calc(100vh - 60px);
+  height: 100%;
+  /* border-right: 2px solid rgba(0, 0, 0, 0.3) !important; */
+  box-shadow: 2px 0px 5px 1px rgba(0, 0, 0, 0.2) !important;
+  padding-top: var(--header-height) !important;
 }

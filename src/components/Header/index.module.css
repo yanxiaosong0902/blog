@@ -2,10 +2,11 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  height: 60px;
+  height: 50px;
   padding: 0 10px;
-  background-color: #fff;
-  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0);
+  background-color: #235b90;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
 
@@ -16,8 +17,51 @@
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .headerBox {
+    flex-direction: row-reverse;
+  }
+  
+}
+
 .left {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  flex: 1;
+  @media screen and (max-width: 768px) {
+    justify-content: flex-end;
+  }
+}
+
+.centerPathName {
+  font-size: 18px;
+  font-weight: 600;
+  flex: 2;
+  text-align: center;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.rightMenuIcon {
+  flex: 1;
+  text-align: right;
+  display: none;
+  @media screen and (max-width: 768px) {
+    text-align: left;
+    display: block;
+  }
+}
+
+.rightLinkIcons {
+  flex: 1;
+  display: inline-flex;
+  justify-content: flex-end;
+  gap: 10px;
+  @media screen and (max-width: 768px) {
+    text-align: left;
+    display: none;
+  }
 }
