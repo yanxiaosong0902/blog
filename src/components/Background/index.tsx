@@ -58,14 +58,25 @@ export default function Background() {
     let twoPointDistance: number
     let distance: number
     let points: Point[] = []
+
+    function getNumPoints(width: number) {
+      const num = Math.round(width / 20)
+      return num > 150 ? 150 : (num < 30 ? 30 : num)
+    }
+
+    function getDistance(width: number, rate: number) {
+      const num = Math.round(width / rate)
+      return num > 150 ? 150 : (num < 100 ? 100 : num)
+    }
+
     function initPoints() {
       if (!ctx) {
         return
       }
       // 点的数量
-      numPoints = canvas.width > 768 ? 100 : 75
-      twoPointDistance = canvas.width > 768 ? 150 : 100
-      distance = canvas.width > 768 ? 100 : 80
+      numPoints = getNumPoints(canvas.width)
+      twoPointDistance = getDistance(canvas.width, 10)
+      distance = getDistance(canvas.width, 10)
       points = []
       for (let i = 0; i < numPoints; i++) {
         const x = Math.random() * canvas.width
