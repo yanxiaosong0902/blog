@@ -17,7 +17,7 @@ function getRouteTitle(pathname: string, menu: any[]) {
     if (current) {
       if (Array.isArray(currentMenu)) {
         currentMenu = currentMenu.find(item => item.key === current)
-      } else if(currentMenu.children) {
+      } else if(currentMenu && currentMenu.children) {
         currentMenu = currentMenu.children.find((item: any) => item.key === current)
       } else {
         return current
@@ -39,8 +39,9 @@ export default function Header() {
       <div className={styles.headerBox}>
         <div className={styles.left}>
           {/* <h2>By</h2> */}
-          <Link href="/">
-            <Image src="/next.svg" alt="icon" width="60" height="60" />
+          <Link href="/" style={{textDecoration: 'none'}}>
+            <Image src="/next.svg" alt="icon" width="50" height="50" />
+            {/* <h4 style={{color: '#fff'}}>面试宝典</h4> */}
           </Link>
         </div>
         <div className={styles.centerPathName}>{currentpath}</div>

@@ -37,6 +37,10 @@ body {
   padding: var(--header-height) 20px 60px;
 }
 
+.contentWrapper img {
+  max-width: 100%;
+}
+
 a {
   color: var(--primary-color);
 }

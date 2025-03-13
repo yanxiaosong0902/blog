@@ -37,6 +37,9 @@ export const MenuItems: MenuItem[] = [{
   }, {
     key: 'context',
     label: 'context'
+  }, {
+    key: 'other',
+    label: '其他'
   }]
 }, {
   key: 'doc-vue',
@@ -61,4 +64,30 @@ export const MenuItems: MenuItem[] = [{
     key: 'optimize',
     label: '优化'
   }]
+}, {
+  key: 'doc-optimize',
+  label: '性能优化',
+}, {
+  key: 'doc-arch',
+  label: '架构服务',
+  children: [{
+    key: 'requestor',
+    label: '请求库'
+  }, {
+    key: 'upload-file-chunk',
+    label: '大文件上传'
+  }]
+}, {
+  key: 'doc-dp',
+  label: '设计模式',
+  children: [{
+    key: 'pub-sub',
+    label: '发布订阅模式'
+  }, {
+    key: 'observer',
+    label: '观察者模式'
+  }]
+}, {
+  key: 'doc-bundler',
+  label: '构建工具'
 }]
